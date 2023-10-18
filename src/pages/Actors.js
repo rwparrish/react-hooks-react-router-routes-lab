@@ -1,14 +1,20 @@
 import { actors } from "../data";
-
+import ActorCard from "../components/ActorCard";
+import NavBar from "../components/NavBar";
+import { act } from "react-dom/test-utils";
 
 function Actors() {
+
+  const actor_to_display = actors.map(actor => <ActorCard key={actor.name} actor={actor} />)
+
   return (
     <>
       <header>
-        {/* What component should go here? */}
+        <NavBar />
       </header>
       <main>
-        {/* Actor info here! */}
+        <h1>Actors Page</h1>
+        {actor_to_display}
       </main>
     </>
   );
